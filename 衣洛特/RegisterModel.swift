@@ -48,7 +48,14 @@ class RegisterModel:NSObject {
                     else if(str == "注册成功")
                     {
                         print("注册成功")
+                        //初始化用户数据库
+                        print("初始化数据库")
+                        MySQL.shareMySQL().initUser(zhuceData)
+                        print("是否插入成功")
+                        MySQL.shareMySQL().searchUser(zhuceData["username"]!)
                         block!(dataInfo:"注册成功")
+                        //初始化用户文件夹
+                    yirooteDirectory.shareyirooteDir().yirooteInitDirectory(zhuceData["username"]!)
                     }
                     break
                 case .Failure:

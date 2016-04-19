@@ -73,6 +73,14 @@
 		CF2FC1461CBA23DD000DF247 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2FC1391CBA23CD000DF247 /* Alamofire.framework */; };
 		CF318C5E1C6CC8AE00CFB604 /* First_ScrollView_Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF318C5D1C6CC8AE00CFB604 /* First_ScrollView_Data.swift */; };
 		CF318C601C6CCDE600CFB604 /* Second_ScrollView_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF318C5F1C6CCDE600CFB604 /* Second_ScrollView_Protocol.swift */; };
+		CF4FD7801CC66265006B755D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4FD77F1CC66265006B755D /* libsqlite3.0.tbd */; };
+		CF4FD78C1CC6627A006B755D /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FD7881CC6627A006B755D /* Directory.swift */; };
+		CF4FD78D1CC6627A006B755D /* download.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FD7891CC6627A006B755D /* download.swift */; };
+		CF4FD78E1CC6627A006B755D /* MySQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FD78A1CC6627A006B755D /* MySQL.swift */; };
+		CF4FD78F1CC6627A006B755D /* registerDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FD78B1CC6627A006B755D /* registerDir.swift */; };
+		CF4FD7931CC66286006B755D /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FD7901CC66286006B755D /* SQLiteDB.swift */; };
+		CF4FD7941CC66286006B755D /* SQLTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FD7911CC66286006B755D /* SQLTable.swift */; };
+		CF4FD7951CC66286006B755D /* String-Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FD7921CC66286006B755D /* String-Extras.swift */; };
 		CF5E0C431C75E17A0058F5C4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E0C421C75E17A0058F5C4 /* Message.swift */; };
 		CF6FFC2B1C7C501F00CA8184 /* FirstTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFC271C7C501F00CA8184 /* FirstTableDataSource.swift */; };
 		CF6FFC2C1C7C501F00CA8184 /* FirstTableMessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFC281C7C501F00CA8184 /* FirstTableMessageItem.swift */; };
@@ -90,6 +98,7 @@
 		CFBE882A1C7C2CFA0093ABEC /* SecondTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE88261C7C2CFA0093ABEC /* SecondTableView.swift */; };
 		CFBE882B1C7C2CFA0093ABEC /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE88271C7C2CFA0093ABEC /* SecondTableViewCell.swift */; };
 		CFEF0D521CC084890067C135 /* ROHUD+MBProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF0D511CC084890067C135 /* ROHUD+MBProgressHUD.swift */; };
+		CFF11BCD1CC1E7C400C6CB4B /* MainViewController_M.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF11BCC1CC1E7C400C6CB4B /* MainViewController_M.swift */; };
 		CFFDA7481CB8CCA3009E5DAF /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFDA7471CB8CCA3009E5DAF /* LoginModel.swift */; };
 		CFFDABBC1CB90D72009E5DAF /* diquPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFDABBB1CB90D72009E5DAF /* diquPickerView.swift */; };
 		CFFDABBE1CB90D7E009E5DAF /* address.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFFDABBD1CB90D7E009E5DAF /* address.plist */; };
@@ -251,6 +260,14 @@
 		CF2FC12E1CBA23CD000DF247 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		CF318C5D1C6CC8AE00CFB604 /* First_ScrollView_Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = First_ScrollView_Data.swift; sourceTree = "<group>"; };
 		CF318C5F1C6CCDE600CFB604 /* Second_ScrollView_Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Second_ScrollView_Protocol.swift; sourceTree = "<group>"; };
+		CF4FD77F1CC66265006B755D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		CF4FD7881CC6627A006B755D /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
+		CF4FD7891CC6627A006B755D /* download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = download.swift; sourceTree = "<group>"; };
+		CF4FD78A1CC6627A006B755D /* MySQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySQL.swift; sourceTree = "<group>"; };
+		CF4FD78B1CC6627A006B755D /* registerDir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registerDir.swift; sourceTree = "<group>"; };
+		CF4FD7901CC66286006B755D /* SQLiteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteDB.swift; sourceTree = "<group>"; };
+		CF4FD7911CC66286006B755D /* SQLTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLTable.swift; sourceTree = "<group>"; };
+		CF4FD7921CC66286006B755D /* String-Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Extras.swift"; sourceTree = "<group>"; };
 		CF5E0C421C75E17A0058F5C4 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		CF6FFC271C7C501F00CA8184 /* FirstTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableDataSource.swift; sourceTree = "<group>"; };
 		CF6FFC281C7C501F00CA8184 /* FirstTableMessageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableMessageItem.swift; sourceTree = "<group>"; };
@@ -269,6 +286,7 @@
 		CFBE88271C7C2CFA0093ABEC /* SecondTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
 		CFEF0D511CC084890067C135 /* ROHUD+MBProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ROHUD+MBProgressHUD.swift"; sourceTree = "<group>"; };
 		CFEF0D531CC085770067C135 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		CFF11BCC1CC1E7C400C6CB4B /* MainViewController_M.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController_M.swift; sourceTree = "<group>"; };
 		CFFDA7471CB8CCA3009E5DAF /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		CFFDABBB1CB90D72009E5DAF /* diquPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = diquPickerView.swift; sourceTree = "<group>"; };
 		CFFDABBD1CB90D7E009E5DAF /* address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = address.plist; sourceTree = "<group>"; };
@@ -281,6 +299,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4FD7801CC66265006B755D /* libsqlite3.0.tbd in Frameworks */,
 				CF2FC1461CBA23DD000DF247 /* Alamofire.framework in Frameworks */,
 				E71883113D808CB99FB77313 /* libPods.a in Frameworks */,
 			);
@@ -315,6 +334,9 @@
 		CF083EB41C476A1900734D47 = {
 			isa = PBXGroup;
 			children = (
+				CF4FD7901CC66286006B755D /* SQLiteDB.swift */,
+				CF4FD7911CC66286006B755D /* SQLTable.swift */,
+				CF4FD7921CC66286006B755D /* String-Extras.swift */,
 				CFEF0D511CC084890067C135 /* ROHUD+MBProgressHUD.swift */,
 				CFEF0D531CC085770067C135 /* Bridging-Header.h */,
 				CF2FC12E1CBA23CD000DF247 /* Alamofire.xcodeproj */,
@@ -342,6 +364,7 @@
 		CF083EBF1C476A1900734D47 /* 衣洛特 */ = {
 			isa = PBXGroup;
 			children = (
+				CF4FD7891CC6627A006B755D /* download.swift */,
 				CF0884CD1C9E9543008AB1A4 /* shezhi */,
 				CF0884CB1C9E950D008AB1A4 /* SecondTable */,
 				CF0884CA1C9E94E6008AB1A4 /* FirstTable */,
@@ -350,6 +373,7 @@
 				CF083EC01C476A1900734D47 /* AppDelegate.swift */,
 				CF083EC21C476A1900734D47 /* MainViewController_V.swift */,
 				CF0884CE1C9E95C5008AB1A4 /* MainViewController_C.swift */,
+				CFF11BCC1CC1E7C400C6CB4B /* MainViewController_M.swift */,
 				CF0884641C9E7DC4008AB1A4 /* tou */,
 				CFAB6A5F1C717DFE007466E0 /* LoginViewController.swift */,
 				CFFDA7471CB8CCA3009E5DAF /* LoginModel.swift */,
@@ -550,6 +574,9 @@
 		CFFDABBA1CB9072E009E5DAF /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				CF4FD7881CC6627A006B755D /* Directory.swift */,
+				CF4FD78A1CC6627A006B755D /* MySQL.swift */,
+				CF4FD78B1CC6627A006B755D /* registerDir.swift */,
 				CFFDABBB1CB90D72009E5DAF /* diquPickerView.swift */,
 				CFAB6A611C717E26007466E0 /* RegisterViewController.swift */,
 				CFFDABBF1CB9445A009E5DAF /* RegisterModel.swift */,
@@ -560,6 +587,7 @@
 		D1D21EBBEA5E946D29D92933 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF4FD77F1CC66265006B755D /* libsqlite3.0.tbd */,
 				F737CF2692B0D9F0D5170107 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -855,12 +883,15 @@
 				CFBE882A1C7C2CFA0093ABEC /* SecondTableView.swift in Sources */,
 				CFFDABBC1CB90D72009E5DAF /* diquPickerView.swift in Sources */,
 				CF08859D1C9EA312008AB1A4 /* lvjing_collectionView.swift in Sources */,
+				CF4FD78D1CC6627A006B755D /* download.swift in Sources */,
 				CFBE88281C7C2CFA0093ABEC /* SecondTableDataSource.swift in Sources */,
 				CF318C5E1C6CC8AE00CFB604 /* First_ScrollView_Data.swift in Sources */,
+				CF4FD78E1CC6627A006B755D /* MySQL.swift in Sources */,
 				CF0885951C9EA312008AB1A4 /* ChosePicLayout.swift in Sources */,
 				CF0885A91C9EA312008AB1A4 /* V_shexiangController.swift in Sources */,
 				CF08859B1C9EA312008AB1A4 /* Editing_V.swift in Sources */,
 				CFAB6A601C717DFE007466E0 /* LoginViewController.swift in Sources */,
+				CF4FD7931CC66286006B755D /* SQLiteDB.swift in Sources */,
 				CF0884CF1C9E95C5008AB1A4 /* MainViewController_C.swift in Sources */,
 				CF0885A81C9EA312008AB1A4 /* SendPicLayout.swift in Sources */,
 				CF08859C1C9EA312008AB1A4 /* lijing_Layout.swift in Sources */,
@@ -868,11 +899,15 @@
 				CF0885991C9EA312008AB1A4 /* Edit_Image_Data.swift in Sources */,
 				CF0885971C9EA312008AB1A4 /* biaoqian_collectionView.swift in Sources */,
 				CF0885981C9EA312008AB1A4 /* biaoqian_Layout.swift in Sources */,
+				CFF11BCD1CC1E7C400C6CB4B /* MainViewController_M.swift in Sources */,
 				CF0885A01C9EA312008AB1A4 /* extensionUIImage.swift in Sources */,
+				CF4FD7941CC66286006B755D /* SQLTable.swift in Sources */,
 				CFBE882B1C7C2CFA0093ABEC /* SecondTableViewCell.swift in Sources */,
+				CF4FD7951CC66286006B755D /* String-Extras.swift in Sources */,
 				CF0885AA1C9EA312008AB1A4 /* ShowOne.swift in Sources */,
 				CFB4B8ED1C7708CB00B7EA21 /* shezhi.swift in Sources */,
 				CFB27FF21C51F3A6002593F3 /* First_ScrollView_Protocol.swift in Sources */,
+				CF4FD78F1CC6627A006B755D /* registerDir.swift in Sources */,
 				CF0885A71C9EA312008AB1A4 /* Send.swift in Sources */,
 				CF6FFC2D1C7C501F00CA8184 /* FirstTableView.swift in Sources */,
 				CF6FFC2B1C7C501F00CA8184 /* FirstTableDataSource.swift in Sources */,
@@ -884,6 +919,7 @@
 				CFAB6A641C7192AF007466E0 /* tou.swift in Sources */,
 				CF08859E1C9EA312008AB1A4 /* tiezhi_collectionView.swift in Sources */,
 				CF08859A1C9EA312008AB1A4 /* Editing_C.swift in Sources */,
+				CF4FD78C1CC6627A006B755D /* Directory.swift in Sources */,
 				CF0885961C9EA312008AB1A4 /* Edit_Image_Layout.swift in Sources */,
 				CFFDA7481CB8CCA3009E5DAF /* LoginModel.swift in Sources */,
 				CFAB6A621C717E26007466E0 /* RegisterViewController.swift in Sources */,

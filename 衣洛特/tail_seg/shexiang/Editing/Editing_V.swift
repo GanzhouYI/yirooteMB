@@ -1,4 +1,5 @@
 import UIKit
+import Photos
 class Editing: UIViewController,UITabBarDelegate,UIScrollViewDelegate,tiezhi_collectionView_Delegate,biaoqian_collectionView_Delegate,lvjing_collectionView_Delegate,UIActionSheetDelegate {
 
     
@@ -83,9 +84,36 @@ class Editing: UIViewController,UITabBarDelegate,UIScrollViewDelegate,tiezhi_col
     
     func save()
     {
-//        UIImageWriteToSavedPhotosAlbum(image: UIImage, _ completionTarget: AnyObject?, _ completionSelector: Selector, _ contextInfo: UnsafeMutablePointer<Void>)
-        UIImageWriteToSavedPhotosAlbum(imageView.image!, nil, nil, nil)
-
+        var localId:String!
+        let image = self.imageView.image!
+        PHPhotoLibrary.sharedPhotoLibrary().performChanges({
+            let result = PHAssetChangeRequest.creationRequestForAssetFromImage(image)
+            let assetPlaceholder = result.placeholderForCreatedAsset
+            //保存标志符
+            localId = assetPlaceholder?.localIdentifier
+            }, completionHandler: { (isSuccess: Bool, error: NSError?) in
+                if isSuccess {
+                    print("保存成功!")
+                    //通过标志符获取对应的资源
+                    let assetResult = PHAsset.fetchAssetsWithLocalIdentifiers(
+                        [localId], options: nil)
+                    let asset = assetResult[0]
+                    let options = PHContentEditingInputRequestOptions()
+                    options.canHandleAdjustmentData = {(adjustmeta: PHAdjustmentData)
+                        -> Bool in
+                        return true
+                    }
+                    //获取保存的图片路径
+                    asset.requestContentEditingInputWithOptions(options,
+                        completionHandler: {(contentEditingInput: PHContentEditingInput?,
+                            info: [NSObject : AnyObject]) -> Void in
+                            print("地址：",contentEditingInput!.fullSizeImageURL)
+                    })
+                } else{
+                    print("保存失败：", error!.localizedDescription)
+                }
+        })
+    
         
         self.navigationController?.popViewControllerAnimated(true)
     }

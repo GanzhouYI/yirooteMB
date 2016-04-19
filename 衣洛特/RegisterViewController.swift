@@ -380,7 +380,7 @@ class RegisterViewController: UIViewController,UIScrollViewDelegate,UITextFieldD
             diqu += diquData[2]
             return diqu
             }()
-        //        zhuceData["logo"]
+                zhuceData["logo"]=""
         let pwdTip = pwdConfirm()
         let nameTip = nameConfirm()
         if nameTip != "昵称格式正确"

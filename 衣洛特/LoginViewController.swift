@@ -145,7 +145,8 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             }
             else if dataInfo == "验证正确"
             {
-                print("login succ")
+                let Main=MainViewController()
+                self.presentViewController(Main, animated: true, completion: nil)
                 
             }
             else if dataInfo == "网络连接错误"

@@ -6,16 +6,33 @@
 //  Copyright © 2016年 __________V|R__________. All rights reserved.
 //
 import Foundation
+
 import Alamofire
-class LoginModel:NSObject {
-    static var Model:LoginModel?
+class MainModel:NSObject {
+    static var Model:MainModel?
     static var predicate:dispatch_once_t = 0
-    class func sharedLoginModel()->LoginModel?{
+    class func sharedMainModel()->MainModel?{
         
         dispatch_once(&predicate) { () -> Void in
-            Model = LoginModel()
+            Model = MainModel()
         }
         return Model
+    }
+    
+    func downloadImage(url:String)
+    {
+        Alamofire.download(.GET, url) {
+            temporaryURL, response in
+            let fileManager = NSFileManager.defaultManager()
+            let directoryURL = fileManager.URLsForDirectory(.DocumentDirectory,
+                                                            inDomains: .UserDomainMask)[0]
+            let pathComponent = response.suggestedFilename
+            print("download")
+            print(directoryURL.URLByAppendingPathComponent(pathComponent!))
+            return directoryURL.URLByAppendingPathComponent(pathComponent!)
+        }
+        
+
     }
     
     typealias NetworkBlock = (dataInfo:String)->Void
@@ -54,19 +71,6 @@ class LoginModel:NSObject {
                         userDefault.setObject(JSON[1], forKey: "username")
                         userDefault.setObject(JSON[2], forKey: "pwd")
                         userDefault.synchronize()//同步
-                        
-                        var infoData:[String:String]=["uid":JSON[0] as! String,
-                            "username":JSON[1] as! String,
-                            "pwd":JSON[2] as! String,
-                            "email":JSON[3] as! String,
-                            "phone":JSON[4] as! String,
-                            "gender":JSON[5] as! String,
-                            "intro":JSON[6] as! String,
-                            "diqu":JSON[7] as! String,
-                            "logo":JSON[8] as! String]
-                        print("info")
-                        print(infoData)
-                        MySQL.shareMySQL().updateUser(infoData["username"]!,user: infoData)
                     }
                     break
                 case .Failure:

@@ -83,6 +83,7 @@ class MainViewController:UIViewController,UIScrollViewDelegate,Second_ScrollView
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
         
+        
         setupFirstTable()
         setupSecondTable()
         

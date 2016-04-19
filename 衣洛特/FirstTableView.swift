@@ -49,6 +49,7 @@ First_ScrollView_Delegate{
         print(imageArray.count)
         self.reloadData()
         self.refreshControl.endRefreshing()
+        
     }
     
 

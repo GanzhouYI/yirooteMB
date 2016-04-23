@@ -124,14 +124,16 @@ class SendViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func fun_返回图库()
     {
         print("back")
-        //let vi = ViewController()
-        //self.navigationController?.popToViewController(vi, animated: true)
         self.navigationController?.popViewControllerAnimated(true)
     }
     
     func send()
     {
-        self.navigationController?.pushViewController(shexiangController(), animated: true)
+        SourceChice.removeAll()
+        assets.removeAll()
+        sendData.removeAll()
+        let Main = MainViewController()
+        self.presentViewController(Main, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

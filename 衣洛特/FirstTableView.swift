@@ -5,7 +5,6 @@ First_ScrollView_Delegate{
     //用于保存所有消息
     var bubbleSection:Array<FirstTableMessageItem>!
     //数据源，用于与 ViewController 交换数据
-    var FirstDataProtocol:FirstTableDataSource!
     var imageArray :[String!] = ["衣洛特iOS图标/beautiful1.png","衣洛特iOS图标/beautiful2.png","衣洛特iOS图标/beautiful3.png","衣洛特iOS图标/beautiful4.png"]
     var First_Scroll_Title :[String!] = ["beautiful1.png","iOS图标/beautiful2.png","衣洛特iOS图标/beautiful3.png","衣洛特iOS图标/beautiful4.png"]
     
@@ -45,14 +44,49 @@ First_ScrollView_Delegate{
     func refreshData() {
         //移除老数据
 
-        print("刷新")
-        print(imageArray.count)
-        self.reloadData()
-        self.refreshControl.endRefreshing()
+        //导入本地数据
+        searchDynamicToFirstTable()
+        //刷新远程数据
+        updateNewDynamic()
         
     }
     
-
+    func searchDynamicToFirstTable(){
+        //self.bubbleSection
+        self.bubbleSection=MySQL.shareMySQL().searchDynamic()
+    }
+    
+    func updateNewDynamic(){
+        var ind:Int=1
+        let str:String = MySQL.shareMySQL().lastDateDynamic()
+        downDynamic.sharedLoginModel()?.conNet(str,block:{(dataInfo,data) -> Void in
+            if dataInfo == "已经是最新的"
+            {
+                print("updateDynamicFirst() 已经是最新的")
+            }
+            else if dataInfo == "有更新数据"
+            {
+                print("有更新数据，开始往table和本地数据库导入")
+                for i in 0..<data.count
+                {
+                    var tempdata = data[i]
+                    let temp = FirstTableMessageItem(dynamic_id:data[i][0],FirstTableImage: data[i][2],FirstTableTitle: data[i][7],FirstTableDetail: data[i][3],FirstTable_yanjin_Num: Int(data[i][4])!,FirstTable_pinglun_Num: Int(data[i][5])!)
+                    self.bubbleSection.append(temp)
+                    MySQL.shareMySQL().insertDynamic(data[i])
+                }
+            }
+            else if dataInfo == "网络连接错误"
+            {
+                print("FirstTable网络错误")
+                MBProgressHUD.showDelayHUDToView(self, message: "网络连接错误")
+            }
+            //获取数据完毕
+            super.reloadData()
+            self.reloadData()
+            self.refreshControl.endRefreshing()
+        })
+        
+    }
     
     override func reloadData()
     {
@@ -60,24 +94,6 @@ First_ScrollView_Delegate{
         self.showsVerticalScrollIndicator = true
         self.showsHorizontalScrollIndicator = true//滚动的提示条
         
-        var count =  0
-        if ((self.FirstDataProtocol != nil))
-        {
-            count = self.FirstDataProtocol.rowsForFirstTable(self)
-            
-            if(count > 0)
-            {   
-                
-                for (var i = 0; i < count; i += 1)
-                {
-                    
-                    let object =  self.FirstDataProtocol.FirstTableViewDetail(self, dataForRow:i)
-                    bubbleSection.append(object)
-                    
-                }
-                
-            }
-        }
         super.reloadData()
     }
     //第一个方法返回分区数，在本例中，就是1
@@ -122,10 +138,7 @@ First_ScrollView_Delegate{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
           
-        let cellId = "MsgCell"
-            print("ROWBegin")
-            print(indexPath.row)
-            print(self.bubbleSection.count)
+            let cellId = "MsgCell"
             let data =  self.bubbleSection[indexPath.row]
             let image_frame = CGRectMake(0, 0, self.frame.width, 120)
             let cell =  FirstTableViewCell(frame:image_frame,data:data, reuseIdentifier:cellId)

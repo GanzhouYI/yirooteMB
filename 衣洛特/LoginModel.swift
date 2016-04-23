@@ -66,13 +66,13 @@ class LoginModel:NSObject {
                             "logo":JSON[8] as! String]
                         print("info")
                         print(infoData)
-                        MySQL.shareMySQL().updateUser(infoData["username"]!,user: infoData)
+                        MySQL.shareMySQL().initUser(infoData)
+                        MySQL.shareMySQL().isExitsDynamic(String(0))
                     }
                     break
                 case .Failure:
                     print("网络连接错误")
                     block!(dataInfo:"网络错误")
-                    //model.info = ["uid":-2,"username":"网络错误","pwd":"error"]
                     break
                 }
         }

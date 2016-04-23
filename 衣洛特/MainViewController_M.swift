@@ -76,7 +76,6 @@ class MainModel:NSObject {
                 case .Failure:
                     print("网络连接错误")
                     block!(dataInfo:"网络错误")
-                    //model.info = ["uid":-2,"username":"网络错误","pwd":"error"]
                     break
                 }
         }

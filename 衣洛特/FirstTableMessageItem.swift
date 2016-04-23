@@ -2,9 +2,9 @@ import UIKit
 
 class FirstTableMessageItem
 {
-    var Num:Int?
-    var FirstTableImage:UIImage?
-    var FirstTablebiaoqian:UIImage?
+    var dynamic_id:String?
+    var FirstTableImage:String?
+    //var FirstTablebiaoqian:UIImage?
     var FirstTableTitle:String?
     var FirstTableDetail:String?
     var FirstTable_yanjin_Num:String!
@@ -16,62 +16,70 @@ class FirstTableMessageItem
         
     }
     
-    init(num:Int, FirstTableImage:String,FirstTablebiaoqian:String,FirstTableTitle:String,FirstTableDetail:String,FirstTable_yanjin_Num:Int,FirstTable_pinglun_Num:Int)
+    //对数据例如评论数据进行格式转换
+    func NumType(strNum:String) -> String
     {
-        self.Num=num
+        var str:String=""
+        var num:Int = Int(strNum)!
+        if(num<=999)
+        {
+            str = String(num)
+        }
+        else if (num>999&&num<=9999)
+        {
+            str = String(format:"%.1f",Double(num)/1000) + "k"
+        }
+        else if(num>99999&&num<=999999)
+        {
+            str = String(format:"%.1f",Double(num)/10000) + "万"
+        }
+        else if(num>999999)
+        {
+            str = "99万+"
+        }
+        return str
+    }
+
+    
+    
+    //对数据例如评论数据进行格式转换
+    func NumType(num:Int) -> String
+    {
+        var str:String=""
+        if(num<=999)
+        {
+            str = String(num)
+        }
+        else if (num>999&&num<=9999)
+        {
+            str = String(format:"%.1f",Double(num)/1000) + "k"
+        }
+        else if(num>99999&&num<=999999)
+        {
+            str = String(format:"%.1f",Double(num)/10000) + "万"
+        }
+        else if(num>999999)
+        {
+            str = "99万+"
+        }
+        return str
+    }
+
+    init(dynamic_id:String,FirstTableImage:String,FirstTableTitle:String,FirstTableDetail:String,FirstTable_yanjin_Num:Int,FirstTable_pinglun_Num:Int)
+    {
+        self.dynamic_id = dynamic_id
         
-        self.FirstTableImage = UIImage(named: FirstTableImage)!
+        self.FirstTableImage = FirstTableImage
         
-        self.FirstTablebiaoqian = UIImage(named: FirstTablebiaoqian)!
+        //self.FirstTablebiaoqian = UIImage(named: FirstTablebiaoqian)!
         
         self.FirstTableTitle = FirstTableTitle
         
         self.FirstTableDetail = FirstTableDetail
         
     
-        self.FirstTable_yanjin_Num = {()->String in
-            var num:String=""
-            if(FirstTable_yanjin_Num<=999)
-            {
-                num = String(FirstTable_yanjin_Num)
-            }
-            else if (FirstTable_yanjin_Num>999&&FirstTable_yanjin_Num<=9999)
-            {
-                num = String(format:"%.1f",Double(FirstTable_yanjin_Num)/1000) + "k"
-            }
-            else if(FirstTable_yanjin_Num>99999&&FirstTable_yanjin_Num<=999999)
-            {
-                num = String(format:"%.1f",Double(FirstTable_yanjin_Num)/10000) + "万"
-            }
-            else if(FirstTable_yanjin_Num>999999)
-            {
-                num = "99万+"
-            }
-            return num
-            }()
+        self.FirstTable_yanjin_Num = NumType(FirstTable_yanjin_Num)
         
-        
-        self.FirstTable_pinglun_Num = {()->String in
-            var num:String=""
-            if(FirstTable_pinglun_Num<=999)
-            {
-                num = String(FirstTable_pinglun_Num)
-            }
-            else if (FirstTable_pinglun_Num>999&&FirstTable_pinglun_Num<=9999)
-            {
-                num = String(format:"%.1f",Double(FirstTable_pinglun_Num)/1000) + "k"
-            }
-            else if(FirstTable_pinglun_Num>99999&&FirstTable_pinglun_Num<=999999)
-            {
-                num = String(format:"%.1f",Double(FirstTable_pinglun_Num)/10000) + "万"
-            }
-            else if(FirstTable_pinglun_Num>999999)
-            {
-                num = "99万+"
-            }
-            return num
-            }()
+        self.FirstTable_pinglun_Num = NumType(FirstTable_pinglun_Num)
     }
-    
-    
 }

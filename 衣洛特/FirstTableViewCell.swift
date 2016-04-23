@@ -1,9 +1,11 @@
 
 import UIKit
-
+import Alamofire
 class FirstTableViewCell:UITableViewCell
 {
 
+    let biaoqian = "衣洛特iOS图标/fanbiaoqian1"
+    
     var FirstTableImage:UIButton?
     var FirstTablebiaoqian:UIButton?
     var FirstTableTitle:UILabel?
@@ -22,10 +24,49 @@ class FirstTableViewCell:UITableViewCell
         self.backgroundColor = UIColor.whiteColor()
         self.frame = frame
         rebuildUserInterface()
+        updateInfoDynamic()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateInfoDynamic(){
+        let urlString:String = "http://www.loveinbc.com/yiroote/searchDynamic_update.php"
+            let parameters = ["dynamic_id": String(self.msgItem.dynamic_id!)]
+            print("输出更新本地动态请求的dynamic_id")
+            print(parameters)
+            Alamofire.request(.POST, urlString, parameters: parameters)
+                .responseJSON{ response in
+                    print("数据")
+                    switch response.result
+                    {
+                    case .Success:
+                        print("网络连接正常")
+                        print(response.result.value!)
+                        let str = (response.result.value!)as?String
+                        
+                        if(str == "动态不存在")
+                        {
+                            print("动态不存在")
+                        }
+                        else if let JSON = response.result.value as? NSArray
+                        {
+                            print("输出远端下更新的数据")
+                            print(JSON)
+                            print("输出远端上更新的数据")
+                            self.FirstTableTitle?.text = JSON[7] as! String
+                            self.FirstTableDetail?.text =  JSON[3] as! String
+                            self.FirstTable_yanjin_Num!.text =  self.msgItem.NumType(JSON[4] as! String)
+                            self.FirstTable_pinglun_Num!.text =  self.msgItem.NumType(JSON[5] as! String)
+                        }
+                        break
+                    case .Failure:
+                        print("网络连接错误")
+                        break
+                    }
+            }
+        
     }
     
     func rebuildUserInterface()
@@ -33,11 +74,11 @@ class FirstTableViewCell:UITableViewCell
         self.selectionStyle = UITableViewCellSelectionStyle.None
         
         self.FirstTableImage = UIButton(frame:CGRectMake(5,40,110,90))
-        self.FirstTableImage?.setBackgroundImage(self.msgItem.FirstTableImage, forState: UIControlState.Normal)
+        self.FirstTableImage?.setBackgroundImage(UIImage(named: ""), forState: UIControlState.Normal)
         self.addSubview(self.FirstTableImage!)
         
         self.FirstTablebiaoqian = UIButton(frame: CGRectMake(0,5,self.frame.width-5,28))
-        self.FirstTablebiaoqian?.setBackgroundImage(self.msgItem.FirstTablebiaoqian, forState: UIControlState.Normal)
+        self.FirstTablebiaoqian?.setBackgroundImage(UIImage(named: biaoqian), forState: UIControlState.Normal)
         self.addSubview(self.FirstTablebiaoqian!)
         
         self.FirstTableTitle = UILabel(frame: CGRectMake(125,32,self.frame.width-125,25))

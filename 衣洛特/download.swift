@@ -45,6 +45,8 @@ class download
         
     }
     
+    
+    
     func downImageShowDetail(url:String,dir:String)  {
         let destination = Alamofire.Request.suggestedDownloadDestination(
             directory: .DocumentDirectory, domain: .UserDomainMask)

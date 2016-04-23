@@ -70,6 +70,8 @@
 		CF0885ED1C9EA784008AB1A4 /* 裁剪.png in Resources */ = {isa = PBXBuildFile; fileRef = CF0885CB1C9EA784008AB1A4 /* 裁剪.png */; };
 		CF0885EE1C9EA784008AB1A4 /* 贴纸.png in Resources */ = {isa = PBXBuildFile; fileRef = CF0885CC1C9EA784008AB1A4 /* 贴纸.png */; };
 		CF0885EF1C9EA784008AB1A4 /* 贴纸select.png in Resources */ = {isa = PBXBuildFile; fileRef = CF0885CD1C9EA784008AB1A4 /* 贴纸select.png */; };
+		CF1F90F51CC8B99A00BF6897 /* downDynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1F90F41CC8B99A00BF6897 /* downDynamic.swift */; };
+		CF1F90FE1CC905B300BF6897 /* dynamicSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1F90FD1CC905B300BF6897 /* dynamicSQL.swift */; };
 		CF2FC1461CBA23DD000DF247 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2FC1391CBA23CD000DF247 /* Alamofire.framework */; };
 		CF318C5E1C6CC8AE00CFB604 /* First_ScrollView_Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF318C5D1C6CC8AE00CFB604 /* First_ScrollView_Data.swift */; };
 		CF318C601C6CCDE600CFB604 /* Second_ScrollView_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF318C5F1C6CCDE600CFB604 /* Second_ScrollView_Protocol.swift */; };
@@ -82,7 +84,6 @@
 		CF4FD7941CC66286006B755D /* SQLTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FD7911CC66286006B755D /* SQLTable.swift */; };
 		CF4FD7951CC66286006B755D /* String-Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FD7921CC66286006B755D /* String-Extras.swift */; };
 		CF5E0C431C75E17A0058F5C4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E0C421C75E17A0058F5C4 /* Message.swift */; };
-		CF6FFC2B1C7C501F00CA8184 /* FirstTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFC271C7C501F00CA8184 /* FirstTableDataSource.swift */; };
 		CF6FFC2C1C7C501F00CA8184 /* FirstTableMessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFC281C7C501F00CA8184 /* FirstTableMessageItem.swift */; };
 		CF6FFC2D1C7C501F00CA8184 /* FirstTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFC291C7C501F00CA8184 /* FirstTableView.swift */; };
 		CF6FFC2E1C7C501F00CA8184 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FFC2A1C7C501F00CA8184 /* FirstTableViewCell.swift */; };
@@ -257,6 +258,8 @@
 		CF0885CB1C9EA784008AB1A4 /* 裁剪.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "裁剪.png"; sourceTree = "<group>"; };
 		CF0885CC1C9EA784008AB1A4 /* 贴纸.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "贴纸.png"; sourceTree = "<group>"; };
 		CF0885CD1C9EA784008AB1A4 /* 贴纸select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "贴纸select.png"; sourceTree = "<group>"; };
+		CF1F90F41CC8B99A00BF6897 /* downDynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = downDynamic.swift; sourceTree = "<group>"; };
+		CF1F90FD1CC905B300BF6897 /* dynamicSQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dynamicSQL.swift; sourceTree = "<group>"; };
 		CF2FC12E1CBA23CD000DF247 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		CF318C5D1C6CC8AE00CFB604 /* First_ScrollView_Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = First_ScrollView_Data.swift; sourceTree = "<group>"; };
 		CF318C5F1C6CCDE600CFB604 /* Second_ScrollView_Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Second_ScrollView_Protocol.swift; sourceTree = "<group>"; };
@@ -269,7 +272,6 @@
 		CF4FD7911CC66286006B755D /* SQLTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLTable.swift; sourceTree = "<group>"; };
 		CF4FD7921CC66286006B755D /* String-Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Extras.swift"; sourceTree = "<group>"; };
 		CF5E0C421C75E17A0058F5C4 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		CF6FFC271C7C501F00CA8184 /* FirstTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableDataSource.swift; sourceTree = "<group>"; };
 		CF6FFC281C7C501F00CA8184 /* FirstTableMessageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableMessageItem.swift; sourceTree = "<group>"; };
 		CF6FFC291C7C501F00CA8184 /* FirstTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableView.swift; sourceTree = "<group>"; };
 		CF6FFC2A1C7C501F00CA8184 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
@@ -420,7 +422,8 @@
 				CF6FFC291C7C501F00CA8184 /* FirstTableView.swift */,
 				CF6FFC281C7C501F00CA8184 /* FirstTableMessageItem.swift */,
 				CF318C5D1C6CC8AE00CFB604 /* First_ScrollView_Data.swift */,
-				CF6FFC271C7C501F00CA8184 /* FirstTableDataSource.swift */,
+				CF1F90F41CC8B99A00BF6897 /* downDynamic.swift */,
+				CF1F90FD1CC905B300BF6897 /* dynamicSQL.swift */,
 			);
 			name = FirstTable;
 			sourceTree = "<group>";
@@ -891,12 +894,14 @@
 				CF0885A91C9EA312008AB1A4 /* V_shexiangController.swift in Sources */,
 				CF08859B1C9EA312008AB1A4 /* Editing_V.swift in Sources */,
 				CFAB6A601C717DFE007466E0 /* LoginViewController.swift in Sources */,
+				CF1F90FE1CC905B300BF6897 /* dynamicSQL.swift in Sources */,
 				CF4FD7931CC66286006B755D /* SQLiteDB.swift in Sources */,
 				CF0884CF1C9E95C5008AB1A4 /* MainViewController_C.swift in Sources */,
 				CF0885A81C9EA312008AB1A4 /* SendPicLayout.swift in Sources */,
 				CF08859C1C9EA312008AB1A4 /* lijing_Layout.swift in Sources */,
 				CFBE88291C7C2CFA0093ABEC /* SecondTableMessageItem.swift in Sources */,
 				CF0885991C9EA312008AB1A4 /* Edit_Image_Data.swift in Sources */,
+				CF1F90F51CC8B99A00BF6897 /* downDynamic.swift in Sources */,
 				CF0885971C9EA312008AB1A4 /* biaoqian_collectionView.swift in Sources */,
 				CF0885981C9EA312008AB1A4 /* biaoqian_Layout.swift in Sources */,
 				CFF11BCD1CC1E7C400C6CB4B /* MainViewController_M.swift in Sources */,
@@ -910,7 +915,6 @@
 				CF4FD78F1CC6627A006B755D /* registerDir.swift in Sources */,
 				CF0885A71C9EA312008AB1A4 /* Send.swift in Sources */,
 				CF6FFC2D1C7C501F00CA8184 /* FirstTableView.swift in Sources */,
-				CF6FFC2B1C7C501F00CA8184 /* FirstTableDataSource.swift in Sources */,
 				CF5E0C431C75E17A0058F5C4 /* Message.swift in Sources */,
 				CF6FFC2C1C7C501F00CA8184 /* FirstTableMessageItem.swift in Sources */,
 				CF318C601C6CCDE600CFB604 /* Second_ScrollView_Protocol.swift in Sources */,

@@ -61,7 +61,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundButton.addTarget(self,action:Selector("returnbackKeyboard"),forControlEvents:UIControlEvents.TouchUpInside)
-        
+        MySQL.shareMySQL().searchAllDynamic()
         self.view.backgroundColor=UIColor.whiteColor()
         
         //提示保存的密码
@@ -104,7 +104,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     {
         tfPs.resignFirstResponder()
         tfName.resignFirstResponder()
-        print("okokok123123123\n")
     }
     
     func regist(sender:UIButton)
@@ -128,7 +127,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     func submit()
     {
-       // MBProgressHUD.bwm_showHUDAddedTo(self.view,title:"正在登录...",animated:true)
         if self.tfName.text?.characters.count == 0{
             MBProgressHUD.showDelayHUDToView(self.view, message: "没有用户名输入")
         }else if self.tfPs.text?.characters.count == 0{
@@ -145,13 +143,15 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             }
             else if dataInfo == "验证正确"
             {
+                
                 let Main=MainViewController()
                 self.presentViewController(Main, animated: true, completion: nil)
                 
             }
             else if dataInfo == "网络连接错误"
             {
-                print("net errr")
+                print("登陆网络错误")
+                MBProgressHUD.showDelayHUDToView(self.view, message: "网络连接错误")
             }
             })
         }

@@ -51,28 +51,14 @@ extension  MainViewController{
 
         //创建一个重用的单元格
         self.Firsttable!.registerClass(FirstTableViewCell.self, forCellReuseIdentifier: "MsgCell")
-        
-        for i in 0...3
-        {
-            var num:Int = i
-            var temp = FirstTableMessageItem(num: num,FirstTableImage: FirstTableImage[i],FirstTablebiaoqian: FirstTablebiaoqian[i],FirstTableTitle: FirstTableTitle[i],FirstTableDetail: FirstTableDetail[i],FirstTable_yanjin_Num: FirstTable_yanjin_Num[i],FirstTable_pinglun_Num: FirstTable_pinglun_Num[i])
-            FirsttableData.append(temp)
-        }
-        self.Firsttable.FirstDataProtocol = self
+
         self.Firsttable.reloadData()
         
         BG_ScrollView.addSubview(self.Firsttable)
     }
     
-    func rowsForFirstTable(tableView:FirstTableView) -> Int
-    {
-        return self.FirsttableData.count
-    }
-    
-    func FirstTableViewDetail(tableView:FirstTableView, dataForRow row:Int) -> FirstTableMessageItem
-    {
-        return FirsttableData[row]
-    }
+        
+
     //==========FirstTableView===============上面===================
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
@@ -130,14 +116,13 @@ extension  MainViewController{
         }
     }
     
-    //底部按钮，跳转到指定功能
+    //底部按钮，跳转到指
     func tail_segClick(seg:UIButton)
     {
         switch(seg.titleLabel!.text!)
         {
         case "摄像":
             let nav = UINavigationController(rootViewController: shexiangController())
-            //self.window?.rootViewController=nav
             self.presentViewController(nav, animated: true, completion: nil)
             break
             

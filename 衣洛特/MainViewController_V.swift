@@ -8,7 +8,7 @@ let  screenBounds:CGRect = UIScreen.mainScreen().bounds
 let 宽比例 = screenBounds.width/414
 let 高比例 = screenBounds.height/736
 
-class MainViewController:UIViewController,UIScrollViewDelegate,Second_ScrollView_Delegate, SecondTableDataSource, FirstTableDataSource{
+class MainViewController:UIViewController,UIScrollViewDelegate,Second_ScrollView_Delegate, SecondTableDataSource{
     var BG_ScrollView = UIScrollView()
     var BG_delegate = UIScrollViewDelegate?()
     
@@ -26,7 +26,6 @@ class MainViewController:UIViewController,UIScrollViewDelegate,Second_ScrollView
 
     let FirstTable_yanjin_Num = [11111111,22222222,3333,4]
     let FirstTable_pinglun_Num = [111111,22222222,3333,44444444]
-    var FirsttableData = [FirstTableMessageItem]()
     var Firsttable:FirstTableView!
     
     let 资讯 = UIImage(named: "衣洛特iOS图标/页面标头图标/资讯")

@@ -55,12 +55,12 @@ class MySQL
         let data = SQLiteDB.sharedInstance().query(sqlString)
         if data.count > 0 {
             //存在，更新数据
-            print("init 存在")
-            
+            print("init yiroote_User存在")
+            updateUser(data[data.count-1]["username"]as!String, user: data[data.count-1])
         }
         else{
             //不存在，创建用户
-            print("init 不存在")
+            print("init yiroote_User不存在")
             let sql = "insert into yiroote_User(username,pwd,email,phone,gender,intro,diqu,logo) values('\(user["username"]!)','\(user["pwd"]!)','\(user["email"]!)','\(user["phone"]!)','\(user["gender"]!)','\(user["intro"]!)','\(user["diqu"]!)','\(user["logo"]!)')"
             print("sql: \(sql)")
             //通过封装的方法执行sql
@@ -68,29 +68,9 @@ class MySQL
             print(result)
         }
         
-        
+        let createStrDynamic = "create table if not exists yiroote_Dynamic(dynamic_id integer primary key,uid int,dynamic_image text,dynamic_text text,dynamic_num_people_watch int,dynamic_num_people_praise int,dynamic_date datetime,dynamic_title text,foreign key (uid) references yiroote_User(uid) on delete cascade)"
         //如果表还不存在则创建表（其中uid为自增主键）
-        SQLiteDB.sharedInstance().execute("create table if not exists yiroote_Dynamic(dynamic_id int primary key auto_increment,uid int,foreign key (uid) references yiroote_User(uid) on delete cascade,dynamic_image varchar(200),dynamic_text text,dynamic_num_people_watch int,dynamic_num_people_praise int,dynamic_date datetime())")
-        
-        let sqlDynamic = "select * from yiroote_Dynamic where username = master'"
-        let dataDynamic = SQLiteDB.sharedInstance().query(sqlDynamic)
-        if data.count > 0 {
-            //存在，更新数据
-            print("init 存在")
-            
-        }
-        else{
-            //不存在，创建用户
-            print("init 不存在")
-            let sql = "insert into yiroote_Dynamic(dynamic_id,username,pwd,dynamic_date) values('0','master','master','2016-04-19 00:00:00')"
-            print("sql: \(sql)")
-            //通过封装的方法执行sql
-            let result = SQLiteDB.sharedInstance().execute(sql)
-            print(result)
-        }
-
-        
-    //SQLiteDB.sharedInstance().execute("create table if not exists yiroote_Dynamic(uid integer primary key,username varchar(30),pwd varchar(50),email varchar(30),phone varchar(20),gender varchar(4),intro text,diqu varchar(40),logo varchar(50))")
+        SQLiteDB.sharedInstance().execute(createStrDynamic)
 }
 
 
@@ -104,18 +84,19 @@ class MySQL
         user = data[data.count - 1]
         user["succeed"] = "true"
     }
+    print("searchUser")
     print(user)
     return user
 }
 
-    func updateUser(username:String,user:[String:String]){
+    func updateUser(username:String,user:[String:AnyObject]){
+        print("updateUser")
         let sql = "update yiroote_User set uid = '\(user["uid"]!)',username = '\(user["username"]!)',pwd = '\(user["pwd"]!)',email = '\(user["email"]!)',phone = '\(user["phone"]!)',gender = '\(user["gender"]!)',intro = '\(user["intro"]!)',diqu = '\(user["diqu"]!)',logo = '\(user["logo"]!)' where username = '\(username)'"
         //通过封装的方法执行sql
         let result = SQLiteDB.sharedInstance().execute(sql)
-        print("begin update")
         print(result)
-
 }
+        
     func deleteUser(username:String){
         let sql = "delete from yiroote_User where username = '\(username)'"
         //通过封装的方法执行sql
